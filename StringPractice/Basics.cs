@@ -11,20 +11,24 @@ namespace StringPractice
     {
         static void Main(string[] args)
         {
-            string str = "sandeep mishra";
+            string str = "mishra";
+
+            string[] arr = new string[] { "mi", "sh", "ra", "bc","bd" };
+           var result = NumberofString(str, arr);
+            Console.WriteLine(result);
             // Basic();
-            char c = 'a';
-            string str2 = "kmacbdegspf";
-            int[] pos = new int[] {1,4,6,7};
-            // SerachForchar(str, c);
-            //var result= ReverseString(str);
-            //  Console.WriteLine(result);
-            //SortedOrder(str2);
-            //FrquencyOfEachCharector(str);
-            //var result =  InsertCharAtCertaionPostion(str2, pos);
-            //  Console.WriteLine(result);
-           var rs = TwoStringsAreSameOrNot(str, str2);
-            Console.WriteLine(rs);
+           // char c = 'a';
+           // string str2 = "kmacbdegspf";
+           // int[] pos = new int[] {1,4,6,7};
+           // // SerachForchar(str, c);
+           // //var result= ReverseString(str);
+           // //  Console.WriteLine(result);
+           // //SortedOrder(str2);
+           // //FrquencyOfEachCharector(str);
+           // //var result =  InsertCharAtCertaionPostion(str2, pos);
+           // //  Console.WriteLine(result);
+           //var rs = TwoStringsAreSameOrNot(str, str2);
+           // Console.WriteLine(rs);
             //Insertchar();
         }
 
@@ -191,5 +195,22 @@ namespace StringPractice
             }
             return builder.ToString();
         }
+
+        public static int NumberofString( string word, string[] patterns)
+        {
+            //Input: patterns = ["a","abc","bc","d"], word = "abc"
+            // Output: 3
+            var counter = 0;
+            for (int i = 0; i < patterns.Length; i++)
+            {
+                if (word.Contains(patterns[i]))
+                {
+                    counter++;
+                }
+            }
+            return counter;
+
+        }
+
     }
 }
