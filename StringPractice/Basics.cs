@@ -212,5 +212,62 @@ namespace StringPractice
 
         }
 
+        public static bool isAlive(string str)
+        {
+            var hs = new HashSet<char>(new List<char>() { 'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U' });
+            var fst = 0;
+            var snd = 0;
+            for (int i = 0; i < str.Length/2; i++)
+            {
+                if (hs.Contains(str[i]))
+                {
+                    fst++;
+                }
+            }
+            for (int j = str.Length / 2; j <str.Length ; j++)
+            {
+                if (hs.Contains(str[j]))
+                {
+                    snd++;
+                }
+            }
+            return fst == snd;
+
+        }
+
+        public static string GenerateString(int n)
+        {
+            var sb = new StringBuilder();
+            if(n/2==0)
+            {
+                sb.Append('a', n);
+            }
+            else
+            {
+                sb.Append('a',n-1);
+                sb.Append('b');
+            }
+            return sb.ToString();
+        }
+
+        public static void Destination(IList<IList<string>> paths)
+        {
+            foreach (var item in paths)
+            {
+                foreach (var res in item)
+                {
+
+                }
+            }
+        }
+
+        public bool SquareIsWhite(string coordinates)
+        {
+            var x = coordinates[0] - 'a';
+            var y = coordinates[1] - '1';
+            return (x + y) % 2 != 0;
+        }
     }
+
+}
 }
